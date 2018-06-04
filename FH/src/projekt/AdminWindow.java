@@ -12,6 +12,8 @@ import java.awt.Insets;
 import java.awt.RadialGradientPaint;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.swing.JTextField;
@@ -29,21 +31,24 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+import com.mysql.jdbc.Statement;
 
 
 public class AdminWindow extends JFrame {
-
+	
 JPanel panel = new JPanel();
 private JTextField introText;
 private JTextField infoText;
+private static String vorname = null;
+private static String nachName = null;
 
 
-public AdminWindow(){
+public AdminWindow(String name){
 	
 
 getContentPane().add(panel);
 panel.setLayout(null);
-introText = new JTextField("Willkommen, "); //AdminName
+introText = new JTextField("Willkommen, " + getAdminName(name)); //AdminName
 introText.setFont(new Font("Tahoma", Font.BOLD, 13));
 introText.setEditable(false);
 introText.setBounds(10, 11, 464, 20);
@@ -81,13 +86,13 @@ panel.add(profilePicHolder);
 JLabel lblVorname = DefaultComponentFactory.getInstance().createLabel("Vorname:");
 lblVorname.setBounds(263, 180, 78, 14);
 panel.add(lblVorname);
-JLabel vn = DefaultComponentFactory.getInstance().createLabel("TempVN");
+JLabel vn = DefaultComponentFactory.getInstance().createLabel(vorname);
 vn.setBounds(339, 180, 92, 14);
 panel.add(vn);
 JLabel lblNachname = DefaultComponentFactory.getInstance().createLabel("Nachname: ");
 lblNachname.setBounds(264, 201, 92, 14);
 panel.add(lblNachname);
-JLabel nn = DefaultComponentFactory.getInstance().createLabel("TempNN");
+JLabel nn = DefaultComponentFactory.getInstance().createLabel(nachName);
 nn.setBounds(339, 201, 92, 14);
 panel.add(nn);
 JButton btnBeenden = new JButton("Beenden");
@@ -162,10 +167,27 @@ setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	}
 
+public static String getAdminName(String user) {
+	ResultSet rs;
+	Statement st;
+	
+	String SQLStatement = "select vorName, nachName from Admin where Username = '" + user + "'";
 
-public static void main(String[] args) {
-	// TODO Auto-generated method stub
-	AdminWindow tw = new AdminWindow();
-	tw.setVisible(true);
+	try {
+		Connection con = Connect.getConnection();
+		st = (Statement) con.createStatement();
+		rs = st.executeQuery(SQLStatement);
+		while (rs.next()) {
+			vorname = rs.getString(1);
+			nachName = rs.getString(2);
+			
+		}
+		
+	} catch (Exception e) {
+		System.out.println(e.getLocalizedMessage());
 	}
+	
+	return vorname + " " +  nachName;
+}
+
 }

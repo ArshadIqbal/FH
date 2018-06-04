@@ -44,8 +44,8 @@ public class LogInWindow extends JFrame {
 	String password;
 	private JTextField todo = new JTextField();
 	
-	private JTextField name = new JTextField();
-	private JTextField pw = new JTextField();
+	private JTextField name = new JTextField(20);
+	private JTextField pw = new JTextField(20);
 	
 	private JLabel statusAusgabe = new JLabel("Ich melde falsche Log In Daten");
 
@@ -113,15 +113,21 @@ public class LogInWindow extends JFrame {
 				//User not found, oder passwort falsch --> setAusgabe
 				
 				if(admin.isSelected()) {
-					AdminWindow aw = new AdminWindow();
-					aw.setVisible(true);
-					setVisible(false);
+					boolean isAdmin;
 					
 					username = name.getText().trim();
 					password = pw.getText().trim();
 					
 					try {
-						SQLFunctions.insertAdmin();
+						 isAdmin = SQLFunctions.checkAdmin(username, password);
+						 if(isAdmin) {
+							 AdminWindow aw = new AdminWindow(username);
+							aw.setVisible(true);
+							setVisible(false);
+						 }else {
+							 String message = "User name oder Password falsch, nochmals überprufen!";
+							JOptionPane.showMessageDialog(null, message);
+						}
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
