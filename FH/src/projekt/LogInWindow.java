@@ -29,6 +29,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.TitledBorder;
@@ -45,7 +46,7 @@ public class LogInWindow extends JFrame {
 	private JTextField todo = new JTextField();
 	
 	private JTextField name = new JTextField(20);
-	private JTextField pw = new JTextField(20);
+	private JPasswordField pw = new JPasswordField(20);
 	
 	private JLabel statusAusgabe = new JLabel("Ich melde falsche Log In Daten");
 

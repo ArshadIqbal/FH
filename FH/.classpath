@@ -2,12 +2,12 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/Project/classes/jgoodies-common-1.8.0-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/Project/classes/jgoodies-common-1.8.0.jar"/>
-	<classpathentry kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/Project/classes/jgoodies-forms-1.8.0-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/Project/classes/jgoodies-forms-1.8.0.jar"/>
-	<classpathentry kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/Project/classes/miglayout15-swing.jar"/>
-	<classpathentry kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/jdbc/sqljdbc4.jar"/>
-	<classpathentry kind="lib" path="/Users/archie/Desktop/Desktop/softwares/msyql/mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/Project/classes/jgoodies-common-1.8.0-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/Project/classes/jgoodies-common-1.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/Project/classes/jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/Project/classes/jgoodies-forms-1.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/Project/classes/miglayout15-swing.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/archie/Desktop/Desktop/BPIT/Semester 4/Softwareengineering/jdbc/sqljdbc4.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/archie/Desktop/Desktop/softwares/msyql/mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

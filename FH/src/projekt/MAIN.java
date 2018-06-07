@@ -14,6 +14,8 @@ public class MAIN {
 		
 		LogInWindow liw = new LogInWindow();
 		liw.setVisible(true);
+		//LectureWindow lw = new LectureWindow();
+		//lw.setVisible(true);
 	}
 
 }

@@ -1,10 +1,11 @@
 
-package projekt;
+package projekt1;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -38,7 +39,7 @@ public class StudentLectureWindow extends JFrame{
 
 		getContentPane().add(panel);
 		panel.setLayout(null);
-		buttonAbbrechen.setBounds(7, 247, 113, 23);
+		buttonAbbrechen.setBounds(7, 327, 113, 23);
 		
 		getContentPane().add(panel);
 			
@@ -47,49 +48,49 @@ public class StudentLectureWindow extends JFrame{
 		
 		info1 = new JTextField();
 		info1.setEditable(false);
-		info1.setBounds(7, 50, 269, 42);
+		info1.setBounds(7, 50, 269, 58);
 		panel.add(info1);
 		info1.setColumns(10);
-		info1.setBorder(new TitledBorder("ï¿½bung 1:"));
+		info1.setBorder(new TitledBorder("Übung 1:"));
 		
 		loesung1 = new JTextField();
-		loesung1.setBounds(7, 94, 269, 42);
+		loesung1.setBounds(7, 109, 269, 58);
 		panel.add(loesung1);
 		loesung1.setColumns(10);
-		loesung1.setBorder(new TitledBorder("Lï¿½sung:"));
+		loesung1.setBorder(new TitledBorder("Lösung:"));
 		
 		info2 = new JTextField();
 		info2.setEditable(false);
-		info2.setBounds(7, 143, 269, 42);
+		info2.setBounds(7, 178, 269, 58);
 		panel.add(info2);
 		info2.setColumns(10);
-		info2.setBorder(new TitledBorder("ï¿½bung 2:"));
+		info2.setBorder(new TitledBorder("Übung 2:"));
 		
 		loesung2 = new JTextField();
-		loesung2.setBounds(7, 184, 269, 42);
+		loesung2.setBounds(7, 237, 269, 58);
 		panel.add(loesung2);
 		loesung2.setColumns(10);
-		loesung2.setBorder(new TitledBorder("Lï¿½sung:"));
+		loesung2.setBorder(new TitledBorder("Lösung:"));
 		
 		JButton hilfe1 = new JButton("Hilfe");
-		hilfe1.setBounds(285, 113, 89, 23);
+		hilfe1.setBounds(311, 122, 89, 38);
 		panel.add(hilfe1);
 		
 		JButton ok2 = new JButton("Ok");
-		ok2.setBounds(285, 162, 89, 23);
+		ok2.setBounds(311, 191, 89, 38);
 		panel.add(ok2);
 		
 		JButton hilfe2 = new JButton("Hilfe");
-		hilfe2.setBounds(285, 203, 89, 23);
+		hilfe2.setBounds(311, 250, 89, 38);
 		panel.add(hilfe2);
 		
 		JButton ok1 = new JButton("Ok");
-		ok1.setBounds(285, 69, 89, 23);
+		ok1.setBounds(311, 63, 89, 38);
 		panel.add(ok1);
 		
 		hilfestellung = new JTextField();
 		hilfestellung.setEditable(false);
-		hilfestellung.setBounds(130, 233, 244, 44);
+		hilfestellung.setBounds(130, 306, 294, 44);
 		panel.add(hilfestellung);
 		hilfestellung.setColumns(10);
 		hilfestellung.setBorder(new TitledBorder("Hilfestellung:"));
@@ -128,18 +129,12 @@ public class StudentLectureWindow extends JFrame{
 		
 		
 	setTitle("Lektion");
-	setSize(400, 320);	
+	setSize(450, 400);	
 	setVisible(true); 
 	setLocation(100, 100); 
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		StudentLectureWindow slw = new StudentLectureWindow();
-		slw.setVisible(true);
-		}
-	
+
 	
 }
 

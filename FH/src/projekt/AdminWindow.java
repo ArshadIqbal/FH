@@ -54,7 +54,7 @@ introText.setEditable(false);
 introText.setBounds(10, 11, 464, 20);
 panel.add(introText);
 introText.setColumns(10);
-infoText = new JTextField("Was m�chten Sie tun?");
+infoText = new JTextField("Was möchten Sie tun?");
 infoText.setEditable(false);
 infoText.setBounds(10, 40, 180, 20);
 panel.add(infoText);

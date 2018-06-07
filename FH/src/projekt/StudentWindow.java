@@ -1,41 +1,22 @@
 package projekt;
 
-import javax.swing.JFrame;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-
-import javax.swing.ButtonGroup;
-import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.RadialGradientPaint;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
-import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-
-import net.miginfocom.swing.MigLayout;
-
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
 
 
 public class StudentWindow extends JFrame {
@@ -46,15 +27,25 @@ public class StudentWindow extends JFrame {
 	private JList<String> listeKurse = new JList<>(model);
 	JScrollPane scrollkurse = new JScrollPane(listeKurse);
 	
-	private DefaultListModel<String> model2 = new DefaultListModel<>();
-	private JList<String> listeLektionen = new JList<>(model2);
+	private DefaultListModel<Lektionen> model2 = new DefaultListModel<>();
+	private JList<Lektionen> listeLektionen = new JList<>(model2);
 	JScrollPane scrollswich= new JScrollPane(listeLektionen);
+	
+	private SQLStatements mysql = new SQLStatements();
+	
+	ArrayList<Lektionen> alleLektionen = new ArrayList<>();
+	static Lektionen o = null;
 
 	private JLabel statusAusgabe = new JLabel("keine Meldungen");
 
 	private JButton buttonAbbrechen = new JButton("Beenden");
 
 public StudentWindow(){
+	
+	alleLektionen = mysql.selectAll();
+	for(Lektionen l: alleLektionen) {
+		model2.addElement(l);
+	}
 	
 	JPanel panel = new JPanel();
 
@@ -106,8 +97,13 @@ public StudentWindow(){
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			StudentLectureWindow slw = new StudentLectureWindow();
-				
+			
+			if(listeLektionen.isSelectionEmpty()) {
+				statusAusgabe.setText("Bitte wählen Sie etwas aus!");
+			}else {
+			o = listeLektionen.getSelectedValue();
+			LectureWindow slw = new LectureWindow();
+			}
 		}
 	});
 	
@@ -120,6 +116,9 @@ setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 }
 
+public static Lektionen getLektionen() {
+	return o;
+}
 
 public static void main(String[] args) {
 	// TODO Auto-generated method stub
